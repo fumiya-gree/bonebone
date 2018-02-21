@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219182955) do
+ActiveRecord::Schema.define(version: 20180221131122) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at",           null: false
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20180219182955) do
   end
 
   create_table "progresses", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "progress",   limit: 4
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180219182955) do
     t.datetime "updated_at",                                      null: false
     t.string   "nickname",               limit: 255
     t.integer  "select_course",          limit: 4
+    t.string   "date",                   limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

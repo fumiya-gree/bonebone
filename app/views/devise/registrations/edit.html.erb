@@ -1,3 +1,4 @@
+<div class = "contents row">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -30,6 +31,28 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :Nickname %></br>
+    <%= f.text_field :nickname, autocomplete: "off" %>
+  </div>
+
+  <h3>トレーニングを決めよう</h3>
+  <%= f.label :お悩みの箇所は？ %></br>
+  <label><%= f.radio_button :select_course, "1" %>肩幅を大きく見せたい</label></br>
+  <label><%= f.radio_button :select_course, "2" %>大胸筋をつけたい</label></br>
+  <label><%= f.radio_button :select_course, "3" %>腕を太くしたい</label></br>
+  <label><%= f.radio_button :select_course, "4" %>腹筋を割りたい</label></br>
+  <label><%= f.radio_button :select_course, "5" %>背筋を鍛えたい</label></br>
+
+  <h3>曜日を選択しよう</h3>
+    <label><%= f.check_box 'date', {}, "1", "0" %>日</label>
+    <label><%= f.check_box 'date', {}, "2", "0" %>月</label>
+    <label><%= f.check_box 'date', {}, "3", "0" %>火</label>
+    <label><%= f.check_box 'date', {}, "4", "0" %>水</label>
+    <label><%= f.check_box 'date', {}, "5", "0" %>木</label>
+    <label><%= f.check_box 'date', {}, "6", "0" %>金</label>
+    <label><%= f.check_box 'date', {}, "7", "0" %>土</label>
 
   <div class="actions">
     <%= f.submit "Update" %>

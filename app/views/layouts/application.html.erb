@@ -7,6 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- pictweetから持ってきた -->
+  <header class="header">
+    <div class="header__bar row">
+      <h1 class="grid-6"><a href="/users/sign_up">BoneBone</a></h1>
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <span>
+            <ul class="user__info">
+              <li>
+                <%= link_to 'マイページ', "/users/current_user.id" %>
+                <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
+              </li>
+            </ul>
+          </span>
+        <a class="post" href="/tweets/new" style="float :right">投稿する</a>
+    </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to 'ログイン', "/users/sign_in", class: 'post' %>
+          <%= link_to '新規登録', "/users/sign_up", class: 'post' %>
+        </div>
+      <% end %>
+    </div>
+  </header>
 
 <%= yield %>
 

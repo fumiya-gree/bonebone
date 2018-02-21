@@ -1,0 +1,10 @@
+<div class = "contents row">
+  <p><%= @nickname %>さんのマイページ</p>
+  <h2>今日のメニュー</h2>
+  <%= @select_course %>
+  <h3>To Doリスト</h3></br>
+    <!-- ここにform_forを用いて進捗を測りたい -->
+  <h3>進捗CHECK</h3>
+    <!-- ここに何かしらを用いて〇〇（足し算）pt/グラフで進捗を表す -->
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</div>
