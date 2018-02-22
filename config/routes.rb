@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'users#show'
   # マイページを表示する
   get 'users/:id' => 'users#show'
+  post 'users/save' => 'users#save'
 end

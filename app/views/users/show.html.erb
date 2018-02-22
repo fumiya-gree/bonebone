@@ -4,6 +4,11 @@
   <%= @select_course %>
   <h3>To Doリスト</h3></br>
     <!-- ここにform_forを用いて進捗を測りたい -->
+    <%= form_for @progress, :url => {:action => 'save'} do |f| %>
+    <label><%= f.radio_button :progress, "1" %>やった!</label></br>
+    <label><%= f.radio_button :progress, "2" %>半分やった!</label></br>
+    <%= f.submit "送信" %>
+    <% end %>
   <h3>進捗CHECK</h3>
     <!-- ここに何かしらを用いて〇〇（足し算）pt/グラフで進捗を表す -->
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
