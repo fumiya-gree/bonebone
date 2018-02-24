@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @nickname = current_user.nickname
     @select_course = current_user.select_course
     @progress = Progress.new
+    # @sum_progress = Progress.user_id
+    # @user_id = current_user.id
   end
 
   def save

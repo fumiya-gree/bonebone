@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'users/save' => 'users#save'
   #コンテンツの一覧、詳細ページ
   resources :contents, :only => [:index, :show]
+  get '/contents/logout' => 'contents#log_out_screen'
   get 'tweets' => 'tweets#index'
   get 'tweets/new' => 'tweets#new'
   post 'tweets' => 'tweets#create'
