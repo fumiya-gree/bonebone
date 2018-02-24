@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  root 'contents#log_out_screen'
   devise_for :users
   # マイページを表示する
   resources :users, only: :show
   post 'users/save' => 'users#save'
   #コンテンツの一覧、詳細ページ
   resources :contents, :only => [:index, :show]
+  #投稿のやつ
   get '/contents/logout' => 'contents#log_out_screen'
   get 'tweets' => 'tweets#index'
   get 'tweets/new' => 'tweets#new'
