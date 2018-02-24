@@ -8,5 +8,6 @@ class ContentsController < ApplicationController
   end
 
   def log_out_screen
+     render :index, layout: true
   end
 end
