@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_login
+
   def show
     @nickname = current_user.nickname
     @select_course = current_user.select_course
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
   private
   def user_login
     unless user_signed_in?
+      # ログインしていなければログインしていない状態でも観れるページに飛ばしたい
       redirect_to new_user_registration_path
     end
   end
