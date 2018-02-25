@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- pictweetから持ってきた -->
+  <!-- piccommentから持ってきた -->
   <header class="header">
     <div class="header__bar row">
       <% if user_signed_in? %>
@@ -22,7 +22,7 @@
               </li>
             </ul>
           </span>
-        <a class="post" href="/tweets/new" style="float :right">投稿する</a>
+        <a class="post" href="/comments/new" style="float :right">投稿する</a>
     </div>
       <% else %>
       <h1 class="grid-6"><a href="/users/sign_up">BoneBone</a></h1>

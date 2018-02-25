@@ -1,6 +1,6 @@
-class TweetsController < ApplicationController
+class CommentsController < ApplicationController
   def index
-    @tweets = Comment.all.order('created_at DESC')
+    @comments = Comment.all.order('created_at DESC')
   end
 
   def new
