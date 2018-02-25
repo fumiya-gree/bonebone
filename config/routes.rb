@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   resources :contents, :only => [:index, :show]
   #投稿のやつ
   get '/contents/logout' => 'contents#log_out_screen'
-  get 'tweets' => 'tweets#index'
-  get 'tweets/new' => 'tweets#new'
-  post 'tweets' => 'tweets#create'
-  get 'users/:id' => 'users#show'
-  delete 'tweets/:id' => 'tweets#destroy'
-  get 'tweets/:id/edit' => 'tweets#edit'
-  patch 'tweets/:id' => 'tweets#update'
+  get 'comments' => 'comments#index'
+  get 'comments/new' => 'comments#new'
+  post 'comments' => 'comments#create'
+  delete 'comments/:id' => 'comments#destroy'
+  get 'comments/:id/edit' => 'comments#edit'
+  patch 'comments/:id' => 'comments#update'
 end

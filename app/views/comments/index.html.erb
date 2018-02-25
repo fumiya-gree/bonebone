@@ -1,23 +1,23 @@
 <div class="contents row">
-  <% @tweets.each do |tweet| %>
+  <% @comments.each do |comment| %>
     <div class="content_post">
       <% if user_signed_in? && current_user.id == tweet.user_id %>
       <div class="more">
         <ul class="more_list">
           <li>
-            <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
+            <%= link_to '編集', "/comments/#{comment.id}/edit" %>
           </li>
           <li>
-            <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+            <%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
           </li>
         </ul>
       </div>
       <% end %>
-      <h4><%= tweet.user.id %></h4>
+      <h4><%= comment.user.id %></h4>
       <span class="name">
         <!-- ここに他のユーザーを確認できるようにしたい -->
-        <a href="users/:#{tweet.user.id}">
-          <span>投稿者</span><%= tweet.user.nickname %>
+        <a href="users/:#{comment.user.id}">
+          <span>投稿者</span><%= comment.user.nickname %>
         </a>
       </span>
     </div>
