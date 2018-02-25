@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+twitter.widgets.createShareButton(
+  'https://dev.twitter.com/',
+  document.getElementById('container'),
+  {
+    text: 'Hello World'
+  }
+);

@@ -1,8 +1,12 @@
 <div class = "contents row">
   <p><%= @nickname %>さんのマイページ</p>
-  <h2>今日のメニュー</h2>
-  <%= @select_course %>
-  <h3>To Doリスト</h3></br>
+  <h3>今日のメニュー</h3>
+    <h4><%= @select_course.course_name %></h4>
+    <%= @select_course.menu_name_1 %><br>
+    <%= @select_course.menu_name_2 %><br>
+    <%= @select_course.menu_name_3 %><br>
+  <!-- そのコースのメニュー名 -->
+  <h3>To Doリスト</h3>
     <!-- ここにform_forを用いて進捗を測りたい -->
     <%= form_for @progress, :url => {:action => 'save'} do |f| %>
     <label><%= f.radio_button :progress, "1" %>やった!</label></br>
@@ -11,8 +15,23 @@
     <% end %>
 
   <h3>進捗CHECK</h3>
-  <spna>現在〇〇pt</spna><br>
-    <!-- ここに何かしらを用いて〇〇（足し算）pt/グラフで進捗を表す -->
-      <!-- ユーザーidで進捗を取り出す -->
+  <spna>現在<%= @sum_progress %>pt</spna><br>
+
+  <a class="twitter-share-button"
+  href="https://twitter.com/share"
+  data-size="large"
+  data-url="https://dev.twitter.com/web/tweet-button"
+  data-via="twitterdev"
+  data-related="twitterapi,twitter"
+  data-hashtags="example,demo"
+  data-text="custom share text"
+  data-size="large"
+  data-lang="ja"
+  data-dnt="true">
+Tweet
+</a>
+<br>
+
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
 </div>

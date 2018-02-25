@@ -3,10 +3,18 @@ class UsersController < ApplicationController
 
   def show
     @nickname = current_user.nickname
-    @select_course = current_user.select_course
+    @select_course = Content.find(current_user.select_course)
     @progress = Progress.new
-    # @sum_progress = Progress.user_id
-    # @user_id = current_user.id
+    # 進捗の際にレコードが存在するかどうかを検証する必要がある。
+    if Progress.where(user_id: current_user.id, progress: 1) && Progress.where(user_id: current_user.id, progress: 2)
+      @sum_progress = (Progress.where(user_id: current_user.id, progress: 1).count) + (Progress.where(user_id: current_user.id, progress: 2).count)*2
+    elsif Progress.where(user_id: current_user.id, progress: 1)
+      @sum_progress = (Progress.where(user_id: current_user.id, progress: 1).count)
+    elsif Progress.where(user_id: current_user.id, progress: 2)
+      @sum_progress = (Progress.where(user_id: current_user.id, progress: 2).count)
+    else
+      @sum_progress = 0
+    end
   end
 
   def save
