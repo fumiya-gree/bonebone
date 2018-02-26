@@ -11,6 +11,8 @@
     <%= form_for @progress, :url => {:action => 'save'} do |f| %>
     <label><%= f.radio_button :progress, "1" %>やった!</label></br>
     <label><%= f.radio_button :progress, "2" %>半分やった!</label></br>
+    <!-- コメントに送りたい -->
+    <textarea cols="30" name="text" placeholder="text" rows="10"></textarea><br>
     <%= f.submit "送信" %>
     <% end %>
 

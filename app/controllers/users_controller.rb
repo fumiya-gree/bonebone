@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     @sum_progress += point_2||0
 
     @comments = Comment.where(user_id: current_user.id)
+    # 投稿用のインスタンスを生成
+    # @comment =  Comment.new
   end
 
   def save
