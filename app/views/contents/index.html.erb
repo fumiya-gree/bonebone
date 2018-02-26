@@ -7,13 +7,13 @@
         <%= content.course_name %>
       </h3>
       <li>
-        <%= content.menu_name_1 %>
+        <%= link_to "#{content.menu_name_1}", "/contents/#{content.menu_name_1}" %>
       </li>
       <li>
-        <%= content.menu_name_2 %>
+        <%= link_to "#{content.menu_name_2}", "/contents/#{content.menu_name_2}" %>
       </li>
       <li>
-        <%= content.menu_name_3 %>
+        <%= link_to "#{content.menu_name_3}", "/contents/#{content.menu_name_3}" %>
       </li>
     </div>
   </ul>

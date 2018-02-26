@@ -20,18 +20,26 @@
   <a class="twitter-share-button"
   href="https://twitter.com/share"
   data-size="large"
-  data-url="https://dev.twitter.com/web/tweet-button"
-  data-via="twitterdev"
+  <!-- シェアしたいURL
+  data-url=""
+  data-via=""
   data-related="twitterapi,twitter"
-  data-hashtags="example,demo"
-  data-text="custom share text"
+  <!-- ハッシュタグ
+  data-hashtags="BoneBone"
+  data-text="やった!"
   data-size="large"
   data-lang="ja"
   data-dnt="true">
-Tweet
-</a>
-<br>
+  Tweet
+  </a>
+  <br>
 
+  <h3>タイムライン</h3>
+
+  <% @comments.each do |comment| %>
+  <%= comment.text %><br>
+  <% end %>
+  <br>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
 </div>

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   #コンテンツの一覧、詳細ページ
   resources :contents, :only => [:index, :show]
   #投稿のやつ
-  get '/contents/logout' => 'contents#log_out_screen'
   get 'comments' => 'comments#index'
   get 'comments/new' => 'comments#new'
   post 'comments' => 'comments#create'
