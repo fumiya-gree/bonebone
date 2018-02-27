@@ -1,4 +1,5 @@
 <div class = "contents row">
+  <p><%= name_with_honorific(@nickname)%></p>
   <p><%= @nickname %>さんのマイページ</p>
   <h3>今日のメニュー</h3>
     <h4><%= @select_course.course_name %></h4>
@@ -12,9 +13,15 @@
     <label><%= f.radio_button :progress, "1" %>やった!</label></br>
     <label><%= f.radio_button :progress, "2" %>半分やった!</label></br>
     <!-- コメントに送りたい -->
-    <textarea cols="30" name="text" placeholder="text" rows="10"></textarea><br>
+    <!-- <textarea cols="30" name="text" placeholder="text" rows="10"></textarea><br> -->
     <%= f.submit "送信" %>
     <% end %>
+
+  <h3>今日の感想</h3>
+  <%= form_for @comment, :url => {:action => 'save2'} do |g| %>
+    <textarea cols="30" name="text" placeholder="今日はメニューを２往復した！" rows="10"></textarea><br>
+  <%= g.submit "送信" %>
+  <% end %>
 
   <h3>進捗CHECK</h3>
   <spna>現在<%= @sum_progress %>pt</spna><br>
@@ -39,6 +46,7 @@
   <h3>タイムライン</h3>
 
   <% @comments.each do |comment| %>
+  <%= comment.created_at %>
   <%= comment.text %><br>
   <% end %>
   <br>

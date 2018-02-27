@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # マイページを表示する
   resources :users, only: :show
   post 'users/save' => 'users#save'
+  post 'users/save2' => 'users#save2'
   #コンテンツの一覧、詳細ページ
   resources :contents, :only => [:index, :show]
   #投稿のやつ

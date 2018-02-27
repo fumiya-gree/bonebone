@@ -14,14 +14,22 @@ class UsersController < ApplicationController
 
     @comments = Comment.where(user_id: current_user.id)
     # 投稿用のインスタンスを生成
-    # @comment =  Comment.new
+    @comment =  Comment.new
   end
 
   def save
     progress = Progress.new
     progress.user_id = current_user.id
-    progress.progress =params[:progress][:progress]
+    progress.progress = params[:progress][:progress]
+    # commentを保存する
     progress.save
+  end
+
+  def save2
+  comment = Comment.new
+  comment.user_id = current_user.id
+  comment.text = params[:text]
+  comment.save
   end
 
   private
