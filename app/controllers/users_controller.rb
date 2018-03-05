@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @progress = Progress.new
     # 進捗の際にレコードが存在するかどうかを検証する必要がある。
     @sum_progress = 0
+    # 1,2が加算されていない
     point_1 = Progress.where(user_id: current_user.id, progress: 1)&.count
     point_2 = Progress.where(user_id: current_user.id, progress: 2)&.count
     @sum_progress += point_1||0

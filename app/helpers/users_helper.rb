@@ -1,6 +1,6 @@
 module UsersHelper
-  def name_with_honorific(name)
-    name + "様"
+  def timeline_date(created)
+    created.strftime('%F')
   end
 
   # ruby strftimeメソッド

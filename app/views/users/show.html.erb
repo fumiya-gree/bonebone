@@ -1,5 +1,4 @@
 <div class = "contents row">
-  <p><%= name_with_honorific(@nickname)%></p>
   <p><%= @nickname %>さんのマイページ</p>
   <h3>今日のメニュー</h3>
     <h4><%= @select_course.course_name %></h4>
@@ -46,7 +45,8 @@
   <h3>タイムライン</h3>
 
   <% @comments.each do |comment| %>
-  <%= comment.created_at %>
+  <% time = comment.created_at %>
+  <%= timeline_date(time) %>
   <%= comment.text %><br>
   <% end %>
   <br>
