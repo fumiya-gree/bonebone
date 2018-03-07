@@ -18,6 +18,8 @@
         <%= comment.text %>
           <!--<%= link_to "#{comment.user.nickname}", "/users/#{comment.user_id}" %>-->
           <span>投稿者</span><%= comment.user.nickname %>
+        <% time = comment.created_at %>
+        <%= timeline_date(time) %>
         </a>
       </span>
     </div>

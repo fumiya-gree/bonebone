@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @sum_progress += point_1||0
     @sum_progress += point_2||0
 
-    @comments = Comment.where(user_id: current_user.id)
+    @comments = Comment.where(user_id: current_user.id).order('created_at DESC')
     # 投稿用のインスタンスを生成
     @comment =  Comment.new
   end
@@ -27,10 +27,10 @@ class UsersController < ApplicationController
   end
 
   def save2
-  comment = Comment.new
-  comment.user_id = current_user.id
-  comment.text = params[:text]
-  comment.save
+    comment = Comment.new
+    comment.user_id = current_user.id
+    comment.text = params[:text]
+    comment.save
   end
 
   private

@@ -22,6 +22,16 @@
   <%= g.submit "送信" %>
   <% end %>
 
+  <h3>今日のTODOと感想</h3>
+  <%= form_tag("/comments/", method: :post) do %>
+    <%= label_tag :TODO %><br>
+      <input type="radio" name="progress_all" value="2"> やった<br>
+      <input type="radio" name="progress_half" value="1"> 半分やった<br>
+    <%= label_tag :感想 %><br>
+      <textarea cols="30" name="text" placeholder="今日はメニューを２往復した！" rows="10"></textarea><br>
+    <%= submit_tag "送信" %>
+  <% end %>
+
   <h3>進捗CHECK</h3>
   <spna>現在<%= @sum_progress %>pt</spna><br>
 
