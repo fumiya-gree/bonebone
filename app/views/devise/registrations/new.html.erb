@@ -37,13 +37,13 @@
       <label><%= f.radio_button :select_course, "5" %>背筋を鍛えたい</label></br>
 
     <h3>曜日を選択しよう</h3>
-      <label><%= check_box_tag 'date[]', "1" %>日</label>
-      <label><%= check_box_tag 'date[]', "2" %>月</label>
-      <label><%= check_box_tag 'date[]', "3" %>火</label>
-      <label><%= check_box_tag 'date[]', "4" %>水</label>
-      <label><%= check_box_tag 'date[]', "5" %>木</label>
-      <label><%= check_box_tag 'date[]', "6" %>金</label>
-      <label><%= check_box_tag 'date[]', "7" %>土</label>
+      <label><%= f.check_box 'date_mon', {}, '月', false %>月</label>
+      <label><%= f.check_box 'date_tue', {}, '火', false %>火</label>
+      <label><%= f.check_box 'date_wed', {}, '水', false %>水</label>
+      <label><%= f.check_box 'date_thu', {}, '木', false %>木</label>
+      <label><%= f.check_box 'date_fri', {}, '金', false %>金</label>
+      <label><%= f.check_box 'date_sat', {}, '土', false %>土</label>
+      <label><%= f.check_box 'date_sun', {}, '日', false %>日</label>
 
     <div class="actions">
       <%= f.submit "Sign up" %>

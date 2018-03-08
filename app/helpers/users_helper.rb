@@ -3,5 +3,4 @@ module UsersHelper
     created.strftime('%F')
   end
 
-  # ruby strftimeメソッド
 end

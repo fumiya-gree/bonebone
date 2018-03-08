@@ -7,6 +7,11 @@ class CommentsController < ApplicationController
   end
 
   def create
+    progress = Progress.new
+    progress.user_id = current_user.id
+    progress.progress = params[:progress]
+    # commentを保存する
+    progress.save
     Comment.create(text: comment_params[:text], user_id: current_user.id)
   end
 

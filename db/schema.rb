@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305105825) do
+ActiveRecord::Schema.define(version: 20180308123643) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -36,11 +36,6 @@ ActiveRecord::Schema.define(version: 20180305105825) do
     t.integer  "user_id",    limit: 4
   end
 
-  create_table "trainig_days", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "training_days", force: :cascade do |t|
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -63,7 +58,13 @@ ActiveRecord::Schema.define(version: 20180305105825) do
     t.datetime "updated_at",                                      null: false
     t.string   "nickname",               limit: 255
     t.integer  "select_course",          limit: 4
-    t.string   "date",                   limit: 255
+    t.string   "date_mon",               limit: 255
+    t.string   "date_tue",               limit: 255
+    t.string   "date_wed",               limit: 255
+    t.string   "date_thu",               limit: 255
+    t.string   "date_fri",               limit: 255
+    t.string   "date_sat",               limit: 255
+    t.string   "date_sun",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

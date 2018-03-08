@@ -5,28 +5,22 @@
     <%= @select_course.menu_name_1 %><br>
     <%= @select_course.menu_name_2 %><br>
     <%= @select_course.menu_name_3 %><br>
-  <!-- そのコースのメニュー名 -->
-  <h3>To Doリスト</h3>
-    <!-- ここにform_forを用いて進捗を測りたい -->
-    <%= form_for @progress, :url => {:action => 'save'} do |f| %>
-    <label><%= f.radio_button :progress, "1" %>やった!</label></br>
-    <label><%= f.radio_button :progress, "2" %>半分やった!</label></br>
-    <!-- コメントに送りたい -->
-    <!-- <textarea cols="30" name="text" placeholder="text" rows="10"></textarea><br> -->
-    <%= f.submit "送信" %>
-    <% end %>
+    <br>
+    <%= @traning_days.date_mon %>
+    <%= @traning_days.date_tue %>
+    <%= @traning_days.date_wed %>
+    <%= @traning_days.date_thu %>
+    <%= @traning_days.date_fri %>
+    <%= @traning_days.date_sat %>
+    <%= @traning_days.date_sun %>
+    がトレーニング日です！！
 
-  <h3>今日の感想</h3>
-  <%= form_for @comment, :url => {:action => 'save2'} do |g| %>
-    <textarea cols="30" name="text" placeholder="今日はメニューを２往復した！" rows="10"></textarea><br>
-  <%= g.submit "送信" %>
-  <% end %>
 
   <h3>今日のTODOと感想</h3>
   <%= form_tag("/comments/", method: :post) do %>
     <%= label_tag :TODO %><br>
-      <input type="radio" name="progress_all" value="2"> やった<br>
-      <input type="radio" name="progress_half" value="1"> 半分やった<br>
+      <input type="radio" name="progress" value="2"> やった<br>
+      <input type="radio" name="progress" value="1"> 半分やった<br>
     <%= label_tag :感想 %><br>
       <textarea cols="30" name="text" placeholder="今日はメニューを２往復した！" rows="10"></textarea><br>
     <%= submit_tag "送信" %>
