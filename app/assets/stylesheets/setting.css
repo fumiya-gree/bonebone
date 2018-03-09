@@ -1,0 +1,103 @@
+  body {
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333;
+    width: 960px;
+    margin: 0 auto;
+  }
+
+
+
+  header {
+    background-color: #00FF99
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .BoneBone {
+    width: 10%;
+    height: 10%;
+  }
+
+  .navbar {
+    height: 50px;
+    width: 960px;
+    background-color: #A9A9A9;
+    padding: 5px;
+    margin: 0 auto;
+  }
+
+  .navbar ul {
+    margin: 15px 0 15px 0;
+  }
+
+  title {
+   font-family: fantasy;
+  }
+
+
+
+  h1,h2,h3,h5,h6 {
+    padding: 10px 0;
+  }
+
+  h4 {
+    padding: 10px 0;
+  }
+
+  p {
+    padding: 5px 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+.today_training {
+  width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+  border-color: #00CC99 ;
+  border-style: solid;
+  border-width: 3px
+}
+
+.todo_comment {
+  width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+  border-color: #00CC99 ;
+  border-style: solid;
+  border-width: 3px
+}
+
+.progress {
+  width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+  border-color: #00CC99 ;
+  border-style: solid;
+  border-width: 3px
+}
+
+.sum_progress {
+  color: #FF99CC ;
+}
+
+.timeline {
+ width: 960px;
+ height: 80px;
+ border-width: 1px;
+ border-style: solid;
+ border-color: #00CC99 ;
+ margin: 5px auto;
+}
+
+  td {
+    margin: 0;
+    padding-left: 10px;
+    line-height: 30px;
+  }

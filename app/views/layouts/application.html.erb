@@ -12,26 +12,33 @@
   <header class="header">
     <div class="header__bar row">
       <% if user_signed_in? %>
-      <h1 class="grid-6"><a href="/users/:curent_user.id">BoneBone</a></h1>
-        <div class="user_nav grid-6">
+      <p>コースで選ぶ、痩せ型特化筋トレサービス</p>
+      <h1><a href="/users/:curent_user.id"><img class= "BoneBone" src="https://www.fastpic.jp/images.php?file=8901965786.png" border="0" alt="BoneBone" ></a></h1>
+        <div class="navbar">
           <span>
             <ul class="user__info">
               <li>
                 ・<%= link_to 'マイページ', "/users/current_user.id" %>
                 ・<%= link_to 'コンテンツ一覧', "/contents" %>
                 ・<%= link_to 'コメント一覧', "/comments" %>
+                ・<%= link_to '投稿する' ,"/comments/new" %>
                 ・<%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
               </li>
             </ul>
           </span>
-        <a class="post" href="/comments/new" style="float :right">投稿する</a>
-    </div>
+        </div>
       <% else %>
-      <h1 class="grid-6"><a href="/">BoneBone</a></h1>
-        <div class="grid-6">
-          <%= link_to 'ログイン', "/users/sign_in", class: 'post' %>
-          <%= link_to '新規登録', "/users/sign_up", class: 'post' %>
-          <%= link_to 'TOP PAGE', "/" %>
+      <h1><a href="/"><img class= "BoneBone" src="https://www.fastpic.jp/images.php?file=8901965786.png" border="0" alt="BoneBone" ></a></h1>
+        <div class="navbar">
+          <span>
+            <ul class="user__info">
+              <li>
+                <%= link_to 'ログイン', "/users/sign_in", class: 'post' %>
+                <%= link_to '新規登録', "/users/sign_up", class: 'post' %>
+                <%= link_to 'TOP PAGE', "/" %>
+              </li>
+            </ul>
+          </span>
         </div>
       <% end %>
     </div>

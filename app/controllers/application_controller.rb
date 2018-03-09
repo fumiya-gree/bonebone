@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    binding.pry
     devise_parameter_sanitizer.permit(:sign_up){|u| u.permit(:date_sun,:date_sat,:date_fri,:date_thu,:date_wed,:date_tue,:date_mon ,:nickname, :select_course, :email, :name, :password, :password_confirmation)}
   end
 end

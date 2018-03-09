@@ -1,6 +1,8 @@
 <div class = "contents row">
   <p><%= @nickname %>さんのマイページ</p>
+
   <h3>今日のメニュー</h3>
+  <div class= "today_training">
     <h4><%= @select_course.course_name %></h4>
     <%= @select_course.menu_name_1 %><br>
     <%= @select_course.menu_name_2 %><br>
@@ -13,46 +15,56 @@
     <%= @traning_days.date_fri %>
     <%= @traning_days.date_sat %>
     <%= @traning_days.date_sun %>
-    がトレーニング日です！！
+    が<%= @nickname %>さんのトレーニング日です！！
+  </div>
 
-
-  <h3>今日のTODOと感想</h3>
+  <h3>今日のTODOと感想<i class="icon-chat"></i></h3>
+  <div class= "todo_comment">
   <%= form_tag("/comments/", method: :post) do %>
-    <%= label_tag :TODO %><br>
+    <h4>TODO</h4>
       <input type="radio" name="progress" value="2"> やった<br>
       <input type="radio" name="progress" value="1"> 半分やった<br>
-    <%= label_tag :感想 %><br>
+    <h4>感想</h4>
       <textarea cols="30" name="text" placeholder="今日はメニューを２往復した！" rows="10"></textarea><br>
     <%= submit_tag "送信" %>
   <% end %>
+  </div>
 
-  <h3>進捗CHECK</h3>
-  <spna>現在<%= @sum_progress %>pt</spna><br>
+  <h3>進捗CHECK<i class="icon-signal"></i></h3>
+  <div class = "progress">
+    <spna>現在<strong class="sum_progress"><%= @sum_progress %></strong>PT</spna><br>
 
-  <a class="twitter-share-button"
-  href="https://twitter.com/share"
-  data-size="large"
-  <!-- シェアしたいURL
-  data-url=""
-  data-via=""
-  data-related="twitterapi,twitter"
-  <!-- ハッシュタグ
-  data-hashtags="BoneBone"
-  data-text="やった!"
-  data-size="large"
-  data-lang="ja"
-  data-dnt="true">
-  Tweet
-  </a>
-  <br>
+    <a class="twitter-share-button"
+    href="https://twitter.com/share"
+    data-size="large"
+    <!-- シェアしたいURL
+    data-url=""
+    data-via=""
+    data-related="twitterapi,twitter"
+    <!-- ハッシュタグ
+    data-hashtags="BoneBone"
+    data-text="やった!"
+    data-size="large"
+    data-lang="ja"
+    data-dnt="true">
+    Tweet
+    </a>
+  </div>
 
   <h3>タイムライン</h3>
-
-  <% @comments.each do |comment| %>
-  <% time = comment.created_at %>
-  <%= timeline_date(time) %>
-  <%= comment.text %><br>
-  <% end %>
+    <% @comments.each do |comment| %>
+      <div class = "timeline">
+        <table>
+          <tr>
+            <td>
+              <% time = comment.created_at %>
+              <%= timeline_date(time) %>
+            </td>
+            <td><strong><%= comment.text %></strong></td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
   <br>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
