@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308123643) do
+ActiveRecord::Schema.define(version: 20180310060608) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 20180308123643) do
     t.datetime "updated_at",           null: false
     t.integer  "progress",   limit: 4
     t.integer  "user_id",    limit: 4
+  end
+
+  create_table "traing_contents", force: :cascade do |t|
+    t.string   "picture_1",  limit: 255
+    t.text     "text_1",     limit: 65535
+    t.string   "picture_2",  limit: 255
+    t.text     "text_2",     limit: 65535
+    t.string   "picture_3",  limit: 255
+    t.text     "text_3",     limit: 65535
+    t.text     "point",      limit: 65535
+    t.integer  "course_id",  limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "training_days", force: :cascade do |t|
