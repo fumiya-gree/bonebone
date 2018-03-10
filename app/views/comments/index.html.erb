@@ -1,9 +1,22 @@
 <div class="contents row">
+  <h2>タイムライン</h2>
+  <p>他のユーザーのコメントを見て次もファイト！！</p>
   <% @comments.each do |comment| %>
-    <div class="content_post">
+    <div class = "timeline">
+      <span>投稿者</span><%= comment.user.nickname %>
+      <table>
+        <tr>
+          <td>
+            <% time = comment.created_at %>
+            <%= timeline_date(time) %>
+          </td>
+          <td>
+            <%= comment.text %>
+          </td>
+        </tr>
+      </table>
       <% if user_signed_in? && current_user.id == comment.user_id %>
-      <div class="more">
-        <ul class="more_list">
+        <ul>
           <li>
             <%= link_to '編集', "/comments/#{comment.id}/edit" %>
           </li>
@@ -11,17 +24,7 @@
             <%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
           </li>
         </ul>
-      </div>
       <% end %>
-      <span class="name">
-        <!-- ここに他のユーザーを確認できるようにしたい -->
-        <%= comment.text %>
-          <!--<%= link_to "#{comment.user.nickname}", "/users/#{comment.user_id}" %>-->
-          <span>投稿者</span><%= comment.user.nickname %>
-        <% time = comment.created_at %>
-        <%= timeline_date(time) %>
-        </a>
-      </span>
-    </div>
+      </div>
   <% end %>
 </div>

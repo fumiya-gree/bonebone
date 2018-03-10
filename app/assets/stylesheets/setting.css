@@ -24,7 +24,7 @@
     height: 50px;
     width: 960px;
     background-color: #A9A9A9;
-    padding: 5px;
+    padding: 5px 0;
     margin: 0 auto;
   }
 
@@ -38,17 +38,18 @@
 
 
 
-  h1,h2,h3,h5,h6 {
+  h1,h2,h4,h5,h6 {
     padding: 10px 0;
   }
 
-  h4 {
-    padding: 10px 0;
+  h3 {
+    padding: 10px 0 0 0;
   }
 
   p {
     padding: 5px 0;
   }
+
 
   ul {
     margin: 0;
@@ -56,10 +57,19 @@
     list-style: none;
   }
 
+
+ li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
 .today_training {
   width: 960px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   border-color: #00CC99 ;
   border-style: solid;
   border-width: 3px
@@ -68,16 +78,17 @@
 .todo_comment {
   width: 960px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   border-color: #00CC99 ;
   border-style: solid;
   border-width: 3px
 }
 
+
 .progress {
   width: 960px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   border-color: #00CC99 ;
   border-style: solid;
   border-width: 3px
@@ -87,12 +98,13 @@
   color: #FF99CC ;
 }
 
+
 .timeline {
  width: 960px;
- height: 80px;
  border-width: 1px;
  border-style: solid;
  border-color: #00CC99 ;
+ padding: 10px 0 10px 10px;
  margin: 5px auto;
 }
 
@@ -101,3 +113,8 @@
     padding-left: 10px;
     line-height: 30px;
   }
+
+.concept {
+   background-image: url('http://free-photos-o04.gatag.net/stocks01/gf01a201503150700vk7gx.jpg');
+   background-size: cover;
+}

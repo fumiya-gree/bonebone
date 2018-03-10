@@ -4,9 +4,9 @@
   <h3>今日のメニュー</h3>
   <div class= "today_training">
     <h4><%= @select_course.course_name %></h4>
-    <%= @select_course.menu_name_1 %><br>
-    <%= @select_course.menu_name_2 %><br>
-    <%= @select_course.menu_name_3 %><br>
+    <%= link_to "#{@select_course.menu_name_1}", "/contents/#{@select_course.menu_name_1}" %><br>
+    <%= link_to "#{@select_course.menu_name_2}", "/contents/#{@select_course.menu_name_2}" %><br>
+    <%= link_to "#{@select_course.menu_name_3}", "/contents/#{@select_course.menu_name_3}" %><br>
     <br>
     <%= @traning_days.date_mon %>
     <%= @traning_days.date_tue %>
@@ -18,6 +18,7 @@
     が<%= @nickname %>さんのトレーニング日です！！
   </div>
 
+<div class = box-todo>
   <h3>今日のTODOと感想<i class="icon-chat"></i></h3>
   <div class= "todo_comment">
   <%= form_tag("/comments/", method: :post) do %>
@@ -30,6 +31,7 @@
   <% end %>
   </div>
 
+<div class = box-progress>
   <h3>進捗CHECK<i class="icon-signal"></i></h3>
   <div class = "progress">
     <spna>現在<strong class="sum_progress"><%= @sum_progress %></strong>PT</spna><br>
@@ -50,21 +52,24 @@
     Tweet
     </a>
   </div>
+</div>
 
-  <h3>タイムライン</h3>
-    <% @comments.each do |comment| %>
-      <div class = "timeline">
-        <table>
-          <tr>
-            <td>
-              <% time = comment.created_at %>
-              <%= timeline_date(time) %>
-            </td>
-            <td><strong><%= comment.text %></strong></td>
-          </tr>
-        </table>
-      </div>
-    <% end %>
+<div class = box-timeline>
+<h3 class="htimeline" >タイムライン</h3>
+  <% @comments.each do |comment| %>
+    <div class = "timeline">
+      <table>
+        <tr>
+          <td>
+            <% time = comment.created_at %>
+            <%= timeline_date(time) %>
+          </td>
+          <td><strong><%= comment.text %></strong></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+</div>
   <br>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
