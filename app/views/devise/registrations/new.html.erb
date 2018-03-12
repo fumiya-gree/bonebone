@@ -11,7 +11,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :password %>
+      <%= f.label :password %><br />
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
@@ -29,10 +29,10 @@
     </div>
 
     <h3>コースを選択しよう！</h3>
-      <label><%= f.radio_button :select_course, "1" %>肩幅を大きく見せたい</label></br>
-      <label><%= f.radio_button :select_course, "2" %>大胸筋をつけたい</label></br>
-      <label><%= f.radio_button :select_course, "3" %>腕を太くしたい</label></br>
-      <label><%= f.radio_button :select_course, "4" %>腹筋を割りたい</label></br>
+      <label><%= f.radio_button :select_course, "1" %>”スーツをカッコよく着こなす！厚い胸板に仕上げる”コース</label></br>
+      <label><%= f.radio_button :select_course, "2" %>”服が決まる肩と背中のラインを手にいれる”コース</label></br>
+      <label><%= f.radio_button :select_course, "3" %>”半袖welcome！太い腕に仕上げていく”コース</label></br>
+      <label><%= f.radio_button :select_course, "4" %>”厚い胸板とキレイな腹筋を手にいれる”コース</label></br>
 
     <h3>曜日を選択しよう</h3>
       <label><%= f.check_box 'date_mon', {}, '月', false %>月</label>
