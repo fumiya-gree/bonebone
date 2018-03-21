@@ -34,7 +34,7 @@
 <div class = box-progress>
   <h3>進捗CHECK<i class="icon-signal"></i></h3>
   <div class = "progress">
-    <spna>現在<strong class="sum_progress"><%= @sum_progress %></strong>PT</spna><br>
+    <span class = "large-character">現在<strong class="sum_progress"><%= @sum_progress %></strong>PT</span><br>
     <p>※300ptを超えたら次のトレーニングコースを試してみましょう！</p>
 
     <a class="twitter-share-button"
@@ -45,7 +45,7 @@
     data-via=""
     data-related="twitterapi,twitter"
     <!-- ハッシュタグ
-    data-hashtags="BoneBone"
+    data-hashtags="痩せ型特化筋トレ管理アプリ『BoneBone』"
     data-text="やった!"
     data-size="large"
     data-lang="ja"
@@ -68,6 +68,16 @@
           <td><strong><%= comment.text %></strong></td>
         </tr>
       </table>
+      <% if user_signed_in? && current_user.id == comment.user_id %>
+        <ul>
+          <li>
+            <%= link_to '編集', "/comments/#{comment.id}/edit" %>
+          </li>
+          <li>
+            <%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
+          </li>
+        </ul>
+      <% end %>
     </div>
   <% end %>
 </div>

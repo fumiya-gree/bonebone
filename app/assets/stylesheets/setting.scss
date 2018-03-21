@@ -1,5 +1,5 @@
   body {
-    background-color: #ffffff;
+    background-color: #f0fff0;
     font-size: 14px;
     color: #333;
     width: 960px;
@@ -9,8 +9,6 @@
 
 
   header {
-    /*background-color: #00FF99;*/
-    background-color: red;
     margin-left: auto;
     margin-right: auto;
 
@@ -32,6 +30,7 @@
   .navbar ul {
     margin: 15px 0 15px 0;
   }
+
 
   title {
    font-family: fantasy;
@@ -97,8 +96,12 @@
 
 .sum_progress {
   color: #FF99CC ;
+  font-size: 40px;
 }
 
+.large-character {
+  font-size: 25px;
+}
 
 .timeline {
  width: 960px;
