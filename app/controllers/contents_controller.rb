@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
   end
 # contentsテーブルから該当するidのコース情報を取得し@productの変数へ代入する処理を書いて下さい
   def show
-    @training_content = TraingContent.find_by(id:1)
+    @training_content = TraingContent.find(params[:id])
   end
 
   def log_out_screen

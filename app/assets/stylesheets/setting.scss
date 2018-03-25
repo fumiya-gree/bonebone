@@ -19,6 +19,11 @@
     height: 10%;
   }
 
+  .contens_img{
+    width: 50%;
+    height: auto;
+  }
+
   .navbar {
     height: 50px;
     width: 960px;
@@ -67,7 +72,7 @@
 
 
 .today_training {
-  width: 960px;
+  background-color: #fff8ff;
   margin: 0 auto;
   padding: 10px 0 10px 10px;
   border-color: #00CC99 ;
@@ -76,7 +81,7 @@
 }
 
 .todo_comment {
-  width: 960px;
+  background-color: #fff8ff;
   margin: 0 auto;
   padding: 10px 0 10px 10px;
   border-color: #00CC99 ;
@@ -86,7 +91,7 @@
 
 
 .progress {
-  width: 960px;
+  background-color: #fff8ff;
   margin: 0 auto;
   padding: 10px 0 10px 10px;
   border-color: #00CC99 ;
@@ -104,7 +109,7 @@
 }
 
 .timeline {
- width: 960px;
+ background-color: #ffffff;
  border-width: 1px;
  border-style: solid;
  border-color: #00CC99 ;
@@ -123,3 +128,17 @@
    background-size: cover;
 }
 
+.left_block {
+   display: inline-block;
+   text-align: left;
+}
+
+.img_block{
+   text-align: left;
+   width: 480px;
+   font-size: 16px;
+}
+
+textarea {
+font-size: 14px;
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310060608) do
+ActiveRecord::Schema.define(version: 20180325183842) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 20180310060608) do
     t.string   "date_fri",               limit: 255
     t.string   "date_sat",               limit: 255
     t.string   "date_sun",               limit: 255
+    t.string   "menu_name_1_text",       limit: 255
+    t.string   "menu_name_2_text",       limit: 255
+    t.string   "menu_name_3_text",       limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,9 +1,11 @@
 <div class="contents row">
   <%= form_tag('/comments', method: :post) do %>
-    <h3>
-      投稿する
-    </h3>
-    <textarea cols="30" name="text" placeholder="text" rows="10"></textarea><br>
-    <input type="submit" value="投稿" style="width:50px; height:50px">
+   <div style="margin-left: 30px; margin-right: 30px;">
+     <h3>
+       投稿する
+     </h3>
+     <textarea cols="125" name="text" placeholder="text" rows="25"></textarea><br>
+     <input type="submit" value="投稿" style="width:50px; height:50px">
+   </div>
   <% end %>
 </div>
