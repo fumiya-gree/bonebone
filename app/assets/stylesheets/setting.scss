@@ -124,7 +124,7 @@
   }
 
 .concept {
-   background-image: url('http://free-photos-o04.gatag.net/stocks01/gf01a201503150700vk7gx.jpg');
+   background-image: url('/assets/TOP_image.jpg');
    background-size: cover;
 }
 
@@ -137,6 +137,20 @@
    text-align: left;
    width: 480px;
    font-size: 16px;
+}
+
+.training_contents {
+  background-color: #fff8ff;
+  margin: 0 auto;
+  padding: 15px 15px 15px 15px;
+  border-color: #00CC99 ;
+  border-style: solid;
+  border-width: 3px
+}
+
+.yellow_line {
+  background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;
+  font-size: 18px;
 }
 
 textarea {

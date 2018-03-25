@@ -1,22 +1,28 @@
 <div class = "contents row" style="margin-left: 30px; margin-right: 30px;">
-<h2>トレーニング一覧</h2>
-<span>選んだコース以外の筋トレも取り入れてみよう！</span>
-  <% @contents.each do |content| %>
-  <ul class="contents_menu">
-    <div class="thumbnail__caption">
-      <h3 class="text-xsmall text-overflow" title="コース名">
+  <h2>トレーニング一覧</h2>
+  <span>選んだコース以外の筋トレも取り入れてみよう！<br></span>
+  <br>
+    <% @contents.each do |content| %>
+    <div class = "training_contents">
+      <span class= "yellow_line" title="コース名">
+        <strong>
         <%= content.course_name %>
-      </h3>
-      <li>
-        <%= link_to "#{content.menu_name_1}", "/contents/#{content.menu_name_1}" %>
-      </li>
-      <li>
-        <%= link_to "#{content.menu_name_2}", "/contents/#{content.menu_name_2}" %>
-      </li>
-      <li>
-        <%= link_to "#{content.menu_name_3}", "/contents/#{content.menu_name_3}" %>
-      </li>
+        </strong>
+      </span>
+      <br>
+      <br>
+        <li>
+          1. <%= link_to "#{content.menu_name_1_text}", "/contents/#{content.menu_name_1}" %>
+        </li>
+      <br>
+        <li>
+          2. <%= link_to "#{content.menu_name_2_text}", "/contents/#{content.menu_name_2}" %>
+        </li>
+      <br>
+        <li>
+          3. <%= link_to "#{content.menu_name_3_text}", "/contents/#{content.menu_name_3}" %>
+        </li>
     </div>
-  </ul>
-  <% end %>
+    <br>
+    <% end %>
 </div>

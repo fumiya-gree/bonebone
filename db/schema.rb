@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325183842) do
+ActiveRecord::Schema.define(version: 20180325191154) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -21,12 +21,15 @@ ActiveRecord::Schema.define(version: 20180325183842) do
   end
 
   create_table "contents", force: :cascade do |t|
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "course_name", limit: 255
-    t.string   "menu_name_1", limit: 255
-    t.string   "menu_name_2", limit: 255
-    t.string   "menu_name_3", limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "course_name",      limit: 255
+    t.string   "menu_name_1",      limit: 255
+    t.string   "menu_name_2",      limit: 255
+    t.string   "menu_name_3",      limit: 255
+    t.string   "menu_name_1_text", limit: 255
+    t.string   "menu_name_2_text", limit: 255
+    t.string   "menu_name_3_text", limit: 255
   end
 
   create_table "progresses", force: :cascade do |t|

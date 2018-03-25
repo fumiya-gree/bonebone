@@ -1,17 +1,19 @@
-
 <div align="center">
-  <img class= "contens_img" src="<%= @training_content.picture_1 %>" border="0" alt="BoneBone" ><br>
+  <!-- コンテンツ名前 -->
+  <img class= "contens_img" src="/assets/<%= @training_content.picture_1 %>" border="0" alt="BoneBone" ><br>
   <div class="img_block">
-    <%= @training_content.text_1 %><br>
+    1<br><%= @training_content.text_1 %><br>
   </div>
-  <img class= "contens_img" src="<%= @training_content.picture_2 %>" border="0" alt="BoneBone"><br>
+  <img class= "contens_img" src="/assets/<%= @training_content.picture_2 %>" border="0" alt="BoneBone"><br>
   <div class="img_block">
-    <%= @training_content.text_2 %><br>
+    2<br><%= @training_content.text_2 %><br>
   </div>
-  <img class= "contens_img" src="<%= @training_content.picture_3 %>" border="0" alt="BoneBone" ><br>
+  <img class= "contens_img" src="/assets/<%= @training_content.picture_3 %>" border="0" alt="BoneBone" ><br>
   <div class="img_block">
-    <%= @training_content.text_3 %><br>
+    3<br><%= @training_content.text_3 %><br>
   </div>
+  <br>
+  <%= link_to "< 前のページに戻る", :back %>
 </div>
 
 

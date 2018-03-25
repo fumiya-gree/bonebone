@@ -1,12 +1,11 @@
 <div class = "contents row" align="center">
-<center>
-  <h2>編集 <%= resource_name.to_s.humanize %></h2>
+  <h2>ユーザー情報編集</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :email %><br />
+      <strong><%= f.label :email %></strong><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
@@ -15,31 +14,31 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <strong><%= f.label :新しいPassword %> </strong>
+      <br><i>(<%= @minimum_password_length %> characters minimum)</i><br />
       <%= f.password_field :password, autocomplete: "off" %>
       <% if @minimum_password_length %>
         <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
       <% end %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <strong><%= f.label :Password確認 %></strong><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <strong><%= f.label :元のpassword %></strong><br />
       <%= f.password_field :current_password, autocomplete: "off" %>
     </div>
 
     <div class="field">
-      <%= f.label :Nickname %></br>
+      <strong><%= f.label :Nickname %></strong></br>
       <%= f.text_field :nickname, autocomplete: "off" %>
     </div>
 
     <h3>コースを選択しよう！</h3>
-      <div class="course">
+      <div class="img_block">
         <label><%= f.radio_button :select_course, "1" %>”スーツをカッコよく着こなす！厚い胸板に仕上げる”コース</label></br>
         <label><%= f.radio_button :select_course, "2" %>”服が決まる肩と背中のラインを手にいれる”コース</label></br>
         <label><%= f.radio_button :select_course, "3" %>”半袖welcome！太い腕に仕上げていく”コース</label></br>
@@ -47,23 +46,20 @@
       </div>
 
     <h3>曜日を選択しよう</h3>
-      <label><%= f.check_box 'date_mon', {}, '月', false %>月</label>
-      <label><%= f.check_box 'date_tue', {}, '火', false %>火</label>
-      <label><%= f.check_box 'date_wed', {}, '水', false %>水</label>
-      <label><%= f.check_box 'date_thu', {}, '木', false %>木</label>
-      <label><%= f.check_box 'date_fri', {}, '金', false %>金</label>
-      <label><%= f.check_box 'date_sat', {}, '土', false %>土</label>
-      <label><%= f.check_box 'date_sun', {}, '日', false %>日</label>
-
+      <div>
+        <label><%= f.check_box 'date_mon', {}, '月', false %>月</label>
+        <label><%= f.check_box 'date_tue', {}, '火', false %>火</label>
+        <label><%= f.check_box 'date_wed', {}, '水', false %>水</label>
+        <label><%= f.check_box 'date_thu', {}, '木', false %>木</label>
+        <label><%= f.check_box 'date_fri', {}, '金', false %>金</label>
+        <label><%= f.check_box 'date_sat', {}, '土', false %>土</label>
+        <label><%= f.check_box 'date_sun', {}, '日', false %>日</label>
+      </div>
+      <br>
     <div class="actions">
       <%= f.submit "Update" %>
     </div>
   <% end %>
-
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-</center>
-</div>
+  <br>
+    <%= link_to "前のページに戻る", :back %>
+  </div>

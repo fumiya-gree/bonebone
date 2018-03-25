@@ -3,10 +3,14 @@
 
   <h3>今日のメニュー</h3>
   <div class= "today_training">
-    <h4><%= @select_course.course_name %></h4>
-    <%= link_to "#{@select_course.menu_name_1}", "/contents/#{@select_course.menu_name_1}" %><br>
-    <%= link_to "#{@select_course.menu_name_2}", "/contents/#{@select_course.menu_name_2}" %><br>
-    <%= link_to "#{@select_course.menu_name_3}", "/contents/#{@select_course.menu_name_3}" %><br>
+    <span class= "yellow_line" title="コース名">
+      <strong>
+      <%= @select_course.course_name %>
+      </strong>
+    </span><br><br>
+    1. <%= link_to "#{@select_course.menu_name_1_text}", "/contents/#{@select_course.menu_name_1}" %><br>
+    2. <%= link_to "#{@select_course.menu_name_2_text}", "/contents/#{@select_course.menu_name_2}" %><br>
+    3. <%= link_to "#{@select_course.menu_name_3_text}", "/contents/#{@select_course.menu_name_3}" %><br>
     <br>
     <%= @traning_days.date_mon %>
     <%= @traning_days.date_tue %>
@@ -46,7 +50,7 @@
     data-related="twitterapi,twitter"
     <!-- ハッシュタグ
     data-hashtags="痩せ型特化筋トレ管理アプリ『BoneBone』"
-    data-text="やった!"
+    data-text="今日も筋トレ終了！"
     data-size="large"
     data-lang="ja"
     data-dnt="true">
@@ -69,14 +73,8 @@
         </tr>
       </table>
       <% if user_signed_in? && current_user.id == comment.user_id %>
-        <ul>
-          <li>
-            <%= link_to '編集', "/comments/#{comment.id}/edit" %>
-          </li>
-          <li>
-            <%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
-          </li>
-        </ul>
+          ・<%= link_to '編集', "/comments/#{comment.id}/edit" %>
+          ・<%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
       <% end %>
     </div>
   <% end %>

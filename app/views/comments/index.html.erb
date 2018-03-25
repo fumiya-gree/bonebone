@@ -1,6 +1,6 @@
 <div class = "contents row" style="margin-left: 30px; margin-right: 30px;">
   <h2>タイムライン</h2>
-  <p>他のユーザーのコメントを見て次もファイト！！</p>
+  <p>他のユーザーのコメントを見て次も頑張りましょう！！</p>
   <% @comments.each do |comment| %>
     <div class = "timeline">
       <span>投稿者</span><%= comment.user.nickname %>
@@ -16,14 +16,8 @@
         </tr>
       </table>
       <% if user_signed_in? && current_user.id == comment.user_id %>
-        <ul>
-          <li>
-            <%= link_to '編集', "/comments/#{comment.id}/edit" %>
-          </li>
-          <li>
-            <%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
-          </li>
-        </ul>
+          ・<%= link_to '編集', "/comments/#{comment.id}/edit" %>
+          ・<%= link_to '削除', "/comments/#{comment.id}", method: :delete %>
       <% end %>
       </div>
   <% end %>
